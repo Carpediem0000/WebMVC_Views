@@ -1,0 +1,71 @@
+﻿@model WebMVC_Views.Models.Student
+
+@{
+    ViewBag.Title = "StandartHelper";
+}
+
+<h2>StandartHelper</h2>
+
+@using (Html.BeginForm())
+{
+    <div class="row">
+        <div class="col-md-2 col-sm-4">
+            @Html.Label("First Name")
+        </div>
+        <div class="col-md-2 col-sm-4">
+            @Html.TextBox("FirstName")
+        </div>
+    </div>
+    <br />
+
+    <div class="row">
+        <div class="col-md-2 col-sm-4">
+            @Html.LabelFor(s => s.LastName)
+        </div>
+        <div class="col-md-2 col-sm-4">
+            @Html.TextBoxFor(s => s.LastName)
+        </div>
+    </div>
+    <br />
+
+    <div class="row">
+        <div class="col-md-2 col-sm-4 col-md-offset-1">
+            @Html.RadioButtonFor(s => s.Language, "C#")
+        </div>
+        <div class="col-md-2 col-sm-4">
+            C#
+        </div>
+    </div>
+    <br />
+
+    <div class="row">
+        <div class="col-md-2 col-sm-4 col-md-offset-1">
+            @Html.RadioButtonFor(s => s.Language, "Java")
+        </div>
+        <div class="col-md-2 col-sm-4 col-md-offset-1">
+            Java
+        </div>
+    </div>
+    <br />
+
+    <div class="row">
+        <div class="col-md-2 col-sm-4 col-md-offset-1">
+            @Html.RadioButtonFor(s => s.Language, "C++")
+        </div>
+        <div class="col-md-2 col-sm-4 col-md-offset-1">
+            C++
+        </div>
+    </div>
+    <br />
+
+    <p>
+        <input class="btn btn-info" type="submit" value="Send" />
+    </p>
+}
+
+@using (Html.BeginForm("Details", "Home", FormMethod.Get))
+{
+    <p>
+        <input class="btn btn-warning" type="submit" value="Details" />
+    </p>
+}

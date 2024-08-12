@@ -1,0 +1,26 @@
+﻿@using WebMVC_Views.Helpers
+@{
+    ViewBag.Title = "Helper";
+}
+
+@helper ListItems(IEnumerable<string> collection)
+{
+    <ul>
+        @foreach (string item in collection)
+        {
+            <li>@item</li>
+        }
+    </ul>
+}
+
+<h2>Helper</h2>
+
+
+@ListItems(ViewBag.Countries)
+<br />
+@ListItems(ViewBag.Capitals)
+<br />
+<hr />
+@Html.GetHtml(ViewBag.Countries as IEnumerable<string>)
+<br />
+@Html.GetHtml(ViewBag.Capitals as IEnumerable<string>)
